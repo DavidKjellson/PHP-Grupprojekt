@@ -1,11 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<!-- <div class="float-left">
-    <div class="card" style="width: 18rem;">
-        <a class="dropdown-item" href="{{ route('admin.users.teams') }}"> Välj ett lag</a>
-    </div>
-</div> -->
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
