@@ -7,27 +7,28 @@
             <div class="card">
                 <div class="card-header">Medlemmar</div>
                 <div class="card-body">
-                <!-- HÄMTA DATABAS MEDLEMMARNA HÄR -->
+
+                    <!-- HÄMTA DATABAS MEDLEMMARNA HÄR -->
                     <table class="table table-hover">
                         <thead class="thead-light">
                             <tr>
-                            <th scope="col">Antal</th>
-                            <th scope="col">Namn</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Aktivitet</th>
-                            <th scope="col">Lag</th>
-                            <th scope="col">Medlemsavgift</th>
+                                <th scope="col">Antal</th>
+                                <th scope="col">Namn</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Aktivitet</th>
+                                <th scope="col">Lag</th>
+                                <th scope="col">Medlemsavgift</th>
                             </tr>
                         </thead>
-                            @foreach($users as $key=>$user)                 
-                            <tbody>
-                                <tr>
+                        @foreach($users as $key=>$user)
+                        <tbody>
+                            <tr>
                                 <th scope="row">{{++$key}}</th>
                                 <td>{{$user->name}}</td>
                                 <td>{{$user->email}}</td>
-                                </tr>
-                            </tbody>
-                            @endforeach
+                            </tr>
+                        </tbody>
+                        @endforeach
                         <h6><u>Summan av medlemsavgift:</u> {{}}</h6>
                     </table>
                 </div>
