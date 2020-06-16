@@ -6,8 +6,16 @@ use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
 
+
+
 class UsersController extends Controller
 {
+
+    public function __construct()
+    {
+        // Protects logged in users 
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,9 +23,9 @@ class UsersController extends Controller
      */
     public function index()
     {
-        return 'User index page!!';
+        $users = User::all();
+        return View('admin.users.index')->with('users', $users);
     }
-
     // DELETED CREATE AND RESTORE FUNCTIONS BECAUSE NOT NEEDED
 
 

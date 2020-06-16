@@ -21,4 +21,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('/admin/users', 'Admin\UsersController', ['except' => ['show', 'create', 'store']]);
+// Strukturerar routerna med prefix och namn, OBS! glöm inte ändra i app.blade.php 
+Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
+    Route::resource('/users', 'UsersController', ['except' => ['show', 'create', 'store']]);
+});

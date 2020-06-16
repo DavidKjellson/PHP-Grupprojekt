@@ -62,8 +62,9 @@
                                     {{ __('Logout') }}
                                 </a>
 
-                                <a class="dropdown-item" href="{{ route('users.index') }}">
-                                    User Management</a>
+                                <!-- Route:n går nu till admin.users.index istället för users.index  -->
+                                <a class="dropdown-item" href="{{ route('admin.users.index') }}">
+                                    Member Management</a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf
