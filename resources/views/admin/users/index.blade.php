@@ -9,7 +9,6 @@
 
                 <div class="card-body">
 
-                    <!-- HÄMTA DATABAS MEDLEMMARNA HÄR -->
                     @foreach($users as $user)
                     {{$user->name}} - {{$user->email}}
                     @endforeach
