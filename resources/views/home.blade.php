@@ -1,6 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="float-left p-1">
+    <div class="card p-3" style="width: 18rem;">
+        <a href="{{ route('admin.users.index') }}"> Visa alla medlemmar</a>
+        <a href="{{ route('teams.index') }}">Lag</a>
+    </div>
+</div> 
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
