@@ -43,4 +43,9 @@ class User extends Authenticatable
     public function roles()
     {
     }
+
+    public function teams()
+    {
+        return $this->belongsToMany('App\Team');
+    }
 };
