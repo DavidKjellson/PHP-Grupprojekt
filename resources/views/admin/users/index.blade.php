@@ -6,10 +6,11 @@
 
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2>Admin Panel Svalan</h2>
+            <h2 style='margin: 20px 10px 10px 10px;'>Admin Panel Svalan</h2>
         </div>
+        <a href="{{ route('teams.index') }}" style='font-size: 20px; margin: 20px 10px 10px 10px;'>Show Teams</a>
         <div class="pull-right">
-            <a class="btn btn-success" href="{{ route('admin.users.create') }}"> Add New Member</a>
+            <a class="btn btn-success" style='margin: 20px 10px 10px 10px;' href="{{ route('admin.users.create') }}"> Add New Member</a>
         </div>
     </div>
 </div>
@@ -21,7 +22,7 @@
 </div>
 @endif
 
-<table class="table table-bordered">
+<table class="table table-bordered" style='margin: 10px 5px 5px 5px;'>
 
     <tr>
         <th>No</th>
