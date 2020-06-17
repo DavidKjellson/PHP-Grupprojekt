@@ -29,8 +29,13 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // Strukturerar routerna med prefix och namn, OBS! glöm inte ändra i app.blade.php 
 Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
-    Route::resource('/users', 'UsersController', ['except' => ['show', 'create', 'store']]);
+    Route::resource('/users', 'MemberController');
+
+    // Route::get('create', function () {
+    //     return view('admin.create');
+    // })->name('admin.create');
 });
 
+Route::resource('/users', 'MemberController');
 
 Route::resource('/teams', 'TeamsController');

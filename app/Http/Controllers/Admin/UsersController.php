@@ -27,7 +27,7 @@ class UsersController extends Controller
         return View('admin.users.index')->with('users', $users);
     }
     // DELETED CREATE AND RESTORE FUNCTIONS BECAUSE NOT NEEDED
-        
+
     /**
      * Show the form for editing the specified resource.
      *
