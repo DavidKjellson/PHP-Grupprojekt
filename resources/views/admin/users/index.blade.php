@@ -9,6 +9,11 @@
                 <div class="card-body">
 
                     <!-- HÄMTA DATABAS MEDLEMMARNA HÄR -->
+
+                    @php
+                    $totalFee = 0
+                    @endphp
+
                     <table class="table table-hover">
                         <thead class="thead-light">
                             <tr>
@@ -28,8 +33,13 @@
                                 <td>{{$user->email}}</td>
                             </tr>
                         </tbody>
+
+                        @php
+                        $totalFee += $user->member_fee;
+                        @endphp
+
                         @endforeach
-                        <h6><u>Summan av medlemsavgift:</u> {{}}</h6>
+                        <h6><u>Summan av medlemsavgift:</u> {{ $totalFee }}</h6>
                     </table>
                 </div>
             </div>
