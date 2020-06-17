@@ -22,7 +22,15 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
+// Route::get('/admin/teams', function () {
+//     return view('admin/show_teams.teams');
+// });
+
+
 // Strukturerar routerna med prefix och namn, OBS! glöm inte ändra i app.blade.php 
 Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
     Route::resource('/users', 'UsersController', ['except' => ['show', 'create', 'store']]);
 });
+
+
+Route::resource('/teams', 'TeamsController');
