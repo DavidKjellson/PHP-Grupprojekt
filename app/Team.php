@@ -25,4 +25,13 @@ class Team extends Model
     public function activity() {
         return $this->belongsTo('App\Activity');
     }
+
+    /**
+     * Relations with Users
+     * 
+     * @return \App\User
+     */
+    public function users() {
+        return $this->belongsToMany('App\User');
+    }
 }
