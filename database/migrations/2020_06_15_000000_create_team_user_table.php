@@ -17,7 +17,7 @@ class CreateUserActivitiesTable extends Migration
             //detta table används för att koppla samman användarna (users) med aktiviteterna
             $table->id('team_id');
             $table->string('user_id'); //användarens id (från user table)
-            
+
         });
     }
 

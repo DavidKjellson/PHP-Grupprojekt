@@ -37,3 +37,5 @@ Route::resource('/users', 'MemberController');
 Route::resource('/teams', 'TeamsController');
 
 Route::patch('teams/{team}/detach/{id}', 'TeamsController@detach')->name('teams.detach');
+
+Route::resource('/activities', 'ActivityController');

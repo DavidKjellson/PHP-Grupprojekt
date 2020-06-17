@@ -6,6 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Activity extends Model
 {
+
+    protected $fillable = [
+        'activity_name', 'activity_type'
+    ];
+
     /**
      * Relations to Teams
      * 

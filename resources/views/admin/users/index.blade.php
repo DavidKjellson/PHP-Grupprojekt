@@ -9,14 +9,16 @@
             <h2 style='margin: 0px 10px 10px 10px;'>Admin Panel Svalan</h2>
         </div>
         <div class="float-left ml-2 mt-4">
-            <div class="card p-3" style="width: 10rem; margin-bottom: 20px">
-                <a style='font-size: 18px; margin: 10px; ' href="{{ route('teams.index') }}">Show Teams</a>
+            <div class="card p-3" style="width: 9rem; margin-bottom: 15px">
+                <a style='font-size: 15px;' href="{{ route('teams.index') }}">Show Teams</a>
+                <a style='font-size: 15px;  ' href="{{ route('activities.index') }}">Show Activities</a>
             </div>
         </div>
 
         <div class="pull-right">
             <a class="btn btn-success" style='margin: 50px 10px 10px 50px;' href="{{ route('admin.users.create') }}"> Add New Member</a>
             <a class="btn btn-info" style='margin: 50px 10px 10px 10px;' href="{{ route('teams.create') }}"> Add New Team</a>
+            <a class="btn btn-danger" style='margin: 50px 10px 10px 10px;' href="{{ route('activities.create') }}"> Add New Activity</a>
         </div>
     </div>
 </div>

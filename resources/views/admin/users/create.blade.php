@@ -5,10 +5,10 @@
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2>Add New Member</h2>
+            <h2 style="margin: 0px 5px 5px 20px">Add New Member</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('admin.users.index') }}"> Back</a>
+            <a class="btn btn-primary" href="{{ route('admin.users.index') }}" style="margin: 0px 5px 5px 20px"> Back</a>
         </div>
     </div>
 </div>
@@ -25,7 +25,7 @@
 </div>
 @endif
 
-<form action="{{ route('admin.users.store') }}" method="POST">
+<form action="{{ route('admin.users.store') }}" method="POST" style="margin: 0px 5px 5px 17px; width: 30%;">
     @csrf
 
     <div class="row">
@@ -47,8 +47,8 @@
                 <input type="number" name="birth_year" class="form-control" placeholder="ex: 1998">
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-            <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="col-xs-12 col-sm-12 col-md-12 text-left">
+            <button type="submit" class="btn btn-success">Submit</button>
         </div>
     </div>
 </form>

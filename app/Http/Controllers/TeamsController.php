@@ -46,11 +46,6 @@ class TeamsController extends Controller
 
 
 
-
-
-
-
-
     /**
      * Display the specified resource.
      *
