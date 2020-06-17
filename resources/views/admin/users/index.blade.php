@@ -13,37 +13,24 @@
             <div class="card">
                 <div class="card-header">Medlemmar</div>
                 <div class="card-body">
-
-                    <!-- HÄMTA DATABAS MEDLEMMARNA HÄR -->
-
                     @php
                     $totalFee = 0
                     @endphp
 
-                    <table class="table table-hover">
-                        <thead class="thead-light">
-                            <tr>
-                                <th scope="col">Antal</th>
-                                <th scope="col">Namn</th>
-                                <th scope="col">Email</th>
-                            </tr>
-                        </thead>
-                        @foreach($users as $key=>$user)
-                        <tbody>
-                            <tr>
-                                <th scope="row">{{++$key}}</th>
-                                <td>{{$user->name}}</td>
-                                <td>{{$user->email}}</td>
-                            </tr>
-                        </tbody>
+                    <ol>
+                    @foreach($users as $key=>$user)
+                    <form action="{{ route('admin.users.destroy', $user->id) }}" method="post">
+                        @csrf
+                        @method('delete')
+                        <li style="padding: 1rem;"><b>Namn:</b> {{$user->name}} | <b>Email:</b> {{$user->email}} <button type="submit" class="d-inline btn-sm btn-danger">Ta bort</button></li>
 
                         @php
                         $totalFee += $user->member_fee;
                         @endphp
-
-                        @endforeach
+                    </form>
+                    @endforeach
+                    </ol>
                         <h6><u>Summan av medlemsavgift:</u> {{ $totalFee }}</h6>
-                    </table>
                 </div>
             </div>
         </div>
