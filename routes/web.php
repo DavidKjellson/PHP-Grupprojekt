@@ -13,19 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','startpageController@startpage')->name('startpage');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-
-// Route::get('/admin/teams', function () {
-//     return view('admin/show_teams.teams');
-// });
-
 
 // Strukturerar routerna med prefix och namn, OBS! glöm inte ändra i app.blade.php 
 Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
@@ -39,3 +31,5 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
 Route::resource('/users', 'MemberController');
 
 Route::resource('/teams', 'TeamsController');
+
+Route::patch('teams/{team}/detach/{id}', 'TeamsController@detach')->name('teams.detach');

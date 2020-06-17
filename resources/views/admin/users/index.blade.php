@@ -6,7 +6,6 @@
 
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <br>
             <h2>Admin Panel Svalan</h2>
         </div>
         <div class="pull-right">
