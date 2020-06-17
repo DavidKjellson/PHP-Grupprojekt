@@ -35,6 +35,6 @@ class MemberController extends Controller
 
         return redirect()->route('admin.users.index')
 
-            ->with('success', 'Product created successfully.');
+            ->with('success', 'Member added successfully.');
     }
 }
