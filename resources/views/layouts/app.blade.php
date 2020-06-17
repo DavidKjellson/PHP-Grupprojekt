@@ -76,13 +76,6 @@
                 </div>
             </div>
         </nav>
-    <div class="float-left ml-2 mt-4">
-        <div class="card p-3" style="width: 18rem;">
-            <a href="{{ route('admin.users.index') }}"> Visa alla medlemmar</a>
-            <a href="{{ route('teams.index') }}">Lag</a>
-        </div>
-    </div> 
-
         
         <main class="py-4">
             @yield('content')
