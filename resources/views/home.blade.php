@@ -18,8 +18,8 @@
                 </div>
                 <div class="float-left p-1">
                     <div class="card p-3" style="width: 18rem;">
-                        <a href="{{ route('admin.users.index') }}"> Visa alla medlemmar</a>
-                        <a href="{{ route('teams.index') }}">Lag</a>
+                        <a href="{{ route('admin.users.index') }}"> Show all members</a>
+                        <a href="{{ route('teams.index') }}">Teams</a>
                     </div>
                 </div>
             </div>

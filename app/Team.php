@@ -13,7 +13,7 @@ class Team extends Model
      * @var array
      */
     protected $fillable = [
-        'team_name', 'activity_id'
+        'team_name', 'activity_id', 'team_activity'
     ];
 
 
@@ -22,7 +22,8 @@ class Team extends Model
      * 
      * @return \App\Activity
      */
-    public function activity() {
+    public function activity()
+    {
         return $this->belongsTo('App\Activity');
     }
 
@@ -31,7 +32,8 @@ class Team extends Model
      * 
      * @return \App\User
      */
-    public function users() {
+    public function users()
+    {
         return $this->belongsToMany('App\User');
     }
 }

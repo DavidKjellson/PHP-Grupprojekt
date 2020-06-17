@@ -14,7 +14,7 @@ class TeamsController extends Controller
      */
     public function index()
     {
-        $teams = Team::all();        
+        $teams = Team::all();
         return view('teams.index')->with('teams', $teams);
     }
 
@@ -23,21 +23,33 @@ class TeamsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
     public function create()
     {
-        //
+        return view('teams.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'team_name' => 'required',
+            'team_activity' => 'required',
+        ]);
+
+        Team::create($request->all());
+
+        return redirect()->route('teams.index')
+
+            ->with('success', 'Team added successfully.');
     }
+
+
+
+
+
+
+
 
     /**
      * Display the specified resource.

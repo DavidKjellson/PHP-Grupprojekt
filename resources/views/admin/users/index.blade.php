@@ -6,11 +6,17 @@
 
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2 style='margin: 20px 10px 10px 10px;'>Admin Panel Svalan</h2>
+            <h2 style='margin: 0px 10px 10px 10px;'>Admin Panel Svalan</h2>
         </div>
-        <a href="{{ route('teams.index') }}" style='font-size: 20px; margin: 20px 10px 10px 10px;'>Show Teams</a>
+        <div class="float-left ml-2 mt-4">
+            <div class="card p-3" style="width: 10rem; margin-bottom: 20px">
+                <a style='font-size: 18px; margin: 10px; ' href="{{ route('teams.index') }}">Show Teams</a>
+            </div>
+        </div>
+
         <div class="pull-right">
-            <a class="btn btn-success" style='margin: 20px 10px 10px 10px;' href="{{ route('admin.users.create') }}"> Add New Member</a>
+            <a class="btn btn-success" style='margin: 50px 10px 10px 50px;' href="{{ route('admin.users.create') }}"> Add New Member</a>
+            <a class="btn btn-info" style='margin: 50px 10px 10px 10px;' href="{{ route('teams.create') }}"> Add New Team</a>
         </div>
     </div>
 </div>
@@ -23,7 +29,7 @@
 @endif
 
 <table class="table table-bordered" style='margin: 10px 5px 5px 5px;'>
-
+    <div class="card-header" style="font-size:25px;">Members</div>
     <tr>
         <th>No</th>
         <th>First Name</th>
