@@ -24,7 +24,9 @@
                             <tbody>
                                 <tr>
                                     <th scope="row">{{++$key}}</th>
-                                    <td>{{$team->team_name}}</td>
+                                    <td>
+                                        <a href="{{ route('teams.show', $team->id) }}">{{$team->team_name}}</a>                              
+                                    </td>   
                                 </tr>
                             </tbody>
                         @endforeach 
