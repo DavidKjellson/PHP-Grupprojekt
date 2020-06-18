@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
+@can('isAdmin')
 <div class="row">
 
     <div class="col-lg-12 margin-tb">
@@ -54,6 +54,13 @@
         <td>{{ $member->last_name }}</td>
         <td>{{ $member->email }}</td>
         <td>{{ $member->birth_year }}</td>
+        <td>
+            <form action="{{ route('admin.users.destroy', $member->member_id) }}" method="post">
+                @csrf
+                @method('delete')
+                <button type="submit" class="d-inline btn-sm btn-danger">Ta bort</button>
+            </form>
+        </td>
     </tr>
 
 
@@ -69,7 +76,7 @@
 
 <!-- PAGINATION  -->
 {!! $members->links() !!}
-
+@endcan
 
 @can('isUser')
 Nope, här får du inte va

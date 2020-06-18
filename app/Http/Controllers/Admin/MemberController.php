@@ -38,8 +38,6 @@ class MemberController extends Controller
             ->with('success', 'Member added successfully.');
     }
 
-
-
     //     // EDIT MEMBERS
     //     public function edit(Member $member)
     //     {
