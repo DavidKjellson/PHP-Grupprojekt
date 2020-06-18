@@ -46,7 +46,7 @@
                         <tbody>
                             <tr>
                                 <th scope="row">{{++$key}}</th>
-                                <td>{{$activity->activity}}</td>
+                                <td>{{$activity->activity_name}}</td>
                             </tr>
                         </tbody>
                         @endforeach

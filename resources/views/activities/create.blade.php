@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+@can('isAdmin')
 @section('content')
 
 <div class="row">
@@ -39,5 +40,5 @@
     </div>
     </div>
 </form>
-
+@endcan
 @endsection

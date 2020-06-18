@@ -46,7 +46,6 @@
                             <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                         </li>
                         @if (Route::has('register'))
-                        <li class="nav-item">
 
                         </li>
                         @endif
@@ -63,8 +62,11 @@
                                 </a>
 
                                 <!-- Route:n går nu till admin.users.index istället för users.index  -->
+
+                                @can('isAdmin')
                                 <a class="dropdown-item" href="{{ route('admin.users.index') }}">
                                     Member Management</a>
+                                @endcan
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf

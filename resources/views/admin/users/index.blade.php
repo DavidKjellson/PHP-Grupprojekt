@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
-@section('content')
 
+@section('content')
+@can('isAdmin')
 <div class="row">
 
     <div class="col-lg-12 margin-tb">
@@ -22,6 +23,7 @@
         </div>
     </div>
 </div>
+
 
 <!-- SUCCESS MESSAGE FOR ADDING NEW MEMBER -->
 @if ($message = Session::get('success'))
@@ -55,4 +57,10 @@
 
 <!-- PAGINATION  -->
 {!! $members->links() !!}
+@endcan
+
+@can('isUser')
+Nope, här får du inte va
+@endcan
+
 @endsection

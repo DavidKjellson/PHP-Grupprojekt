@@ -1,6 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+<!-- SUCCESS MESSAGE FOR ADDING NEW MEMBER -->
+@if ($message = Session::get('success'))
+<div class="alert alert-success">
+    <p>{{ $message }}</p>
+</div>
+@endif
 <div class="pull-right">
     <a class="btn btn-success" style='margin: 20px 10px 10px 10px;' href="{{ route('admin.users.create') }}"> Add New Member</a>
     <a class="btn btn-info" style='margin: 20px 10px 10px 10px;' href="{{ route('teams.create') }}"> Add New Team</a>

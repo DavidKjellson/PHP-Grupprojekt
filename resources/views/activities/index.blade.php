@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+@can('isAdmin')
 @section('content')
 <div class="pull-right">
     <a class="btn btn-success" style='margin: 20px 10px 10px 10px;' href="{{ route('admin.users.create') }}"> Add New Member</a>
@@ -38,4 +39,5 @@
     </div>
 </div>
 </div>
+@endcan
 @endsection

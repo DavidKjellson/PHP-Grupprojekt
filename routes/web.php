@@ -15,22 +15,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'startpageController@startpage')->name('startpage');
 
-Auth::routes([
-    'register' => false, // Registration Routes...
-    'reset' => false, // Password Reset Routes...
-    'verify' => false, // Email Verification Routes...
-]);
+Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 // Strukturerar routerna med prefix och namn, OBS! glöm inte ändra i app.blade.php 
 Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
     Route::resource('/users', 'MemberController');
-
-    // Route::get('create', function () {
-    //     return view('admin.create');
-    // })->name('admin.create');
 });
+
 
 Route::resource('/users', 'MemberController');
 

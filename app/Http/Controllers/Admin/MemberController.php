@@ -37,4 +37,27 @@ class MemberController extends Controller
 
             ->with('success', 'Member added successfully.');
     }
+
+
+
+    //     // EDIT MEMBERS
+    //     public function edit(Member $member)
+    //     {
+    //         return view('admin.users.edit', compact('member'));
+    //     }
+    //     public function update(Request $request, Member $member)
+    //     {
+    //         $request->validate([
+    //             'first_name' => 'required',
+    //             'last_name' => 'required',
+    //             'email' => 'required',
+    //             'birth_year' => 'required'
+    //         ]);
+
+    //         $member->update($request->all());
+    //         return redirect()->route('admin.users.index')
+    //             ->with('success', 'Member updated successfully');
+    //     }
+    // }
+
 }
