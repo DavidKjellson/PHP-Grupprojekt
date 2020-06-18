@@ -1,8 +1,7 @@
 @extends('layouts.app')
 
-
 @section('content')
-@can('isAdmin')
+
 <div class="row">
 
     <div class="col-lg-12 margin-tb">
@@ -11,15 +10,15 @@
         </div>
         <div class="float-left ml-2 mt-4">
             <div class="card p-3" style="width: 9rem; margin-bottom: 15px">
-                <a style='font-size: 15px;' href="{{ route('teams.index') }}">Show Teams</a>
-                <a style='font-size: 15px;  ' href="{{ route('activities.index') }}">Show Activities</a>
+                <a style='font-size: 15px;' href="{{ route('teams.index') }}">Visa lag</a>
+                <a style='font-size: 15px;  ' href="{{ route('activities.index') }}">Visa aktiviteter</a>
             </div>
         </div>
 
         <div class="pull-right">
-            <a class="btn btn-success" style='margin: 50px 10px 10px 50px;' href="{{ route('admin.users.create') }}"> Add New Member</a>
-            <a class="btn btn-info" style='margin: 50px 10px 10px 10px;' href="{{ route('teams.create') }}"> Add New Team</a>
-            <a class="btn btn-danger" style='margin: 50px 10px 10px 10px;' href="{{ route('activities.create') }}"> Add New Activity</a>
+            <a class="btn btn-success" style='margin: 50px 10px 10px 50px;' href="{{ route('admin.users.create') }}"> Lägg till ny medlem</a>
+            <a class="btn btn-info" style='margin: 50px 10px 10px 10px;' href="{{ route('teams.create') }}"> Lägg till nytt lag</a>
+            <a class="btn btn-danger" style='margin: 50px 10px 10px 10px;' href="{{ route('activities.create') }}"> Lägg till ny aktivitet</a>
         </div>
     </div>
 </div>
@@ -33,13 +32,19 @@
 @endif
 
 <table class="table table-bordered" style='margin: 10px 5px 5px 5px;'>
-    <div class="card-header" style="font-size:25px;">Members</div>
+    <div class="card-header" style="font-size:25px;">Medlemmar</div>
+
+    <!-- VISA DATABAS MEDLEMMARNA HÄR -->
+    @php
+    $totalFee = 0
+    @endphp
+
     <tr>
-        <th>No</th>
-        <th>First Name</th>
-        <th>Last Name</th>
+        <th>Nr</th>
+        <th>Förnamn</th>
+        <th>Efternamn</th>
         <th>Email</th>
-        <th>Birth year</th>
+        <th>Födelseår</th>
         <th width="280px">Action</th>
     </tr>
     @foreach($members as $key=>$member)
@@ -49,15 +54,22 @@
         <td>{{ $member->last_name }}</td>
         <td>{{ $member->email }}</td>
         <td>{{ $member->birth_year }}</td>
-        </form>
-        </td>
     </tr>
+
+
+    @php
+    $totalFee += $member->member_fee;
+    @endphp
+
     @endforeach
 </table>
 
+    <!--Skriv ut totalsumman-->
+    <h6><u>Totala inkomst från dessa medlemmar:</u> {{ $totalFee }}kr</h6>
+
 <!-- PAGINATION  -->
 {!! $members->links() !!}
-@endcan
+
 
 @can('isUser')
 Nope, här får du inte va
