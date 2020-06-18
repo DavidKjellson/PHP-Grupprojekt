@@ -26,8 +26,7 @@ class UsersController extends Controller
         $users = User::all();
         return View('admin.users.index')->with('users', $users);
     }
-    // DELETED CREATE AND RESTORE FUNCTIONS BECAUSE NOT NEEDED
-        
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -53,11 +52,12 @@ class UsersController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\User  $user
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy(User $user)
     {
-        //
+        $user->delete();
+        return redirect(route('admin.users.index'));
     }
 }

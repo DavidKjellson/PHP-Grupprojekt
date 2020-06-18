@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTeamsTable extends Migration
+class AddRoleColumnToUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,8 @@ class CreateTeamsTable extends Migration
      */
     public function up()
     {
-        Schema::create('teams', function (Blueprint $table) {
-            $table->id('id');
-            $table->string('team_name');
-            $table->integer('activity_id'); //ska vara id:t för aktiviteten
+        Schema::table('users', function (Blueprint $table) {
+            $table->enum('role',  ['user', 'admin'])->default('user');
         });
     }
 
@@ -27,6 +25,8 @@ class CreateTeamsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('teams');
+        Schema::table('users', function (Blueprint $table) {
+            //
+        });
     }
 }

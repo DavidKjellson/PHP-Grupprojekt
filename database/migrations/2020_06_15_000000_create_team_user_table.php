@@ -13,11 +13,11 @@ class CreateMemberActivitiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('member_activities', function (Blueprint $table) {
+        Schema::create('team_user', function (Blueprint $table) {
             //detta table används för att koppla samman användarna (users) med aktiviteterna
-            $table->id('ua_id');
-            $table->string('ua_user'); //användarens id (från user table)
-            $table->string('ua_activity'); //aktivitetens id (från activities table)
+            $table->id('team_id');
+            $table->string('user_id'); //användarens id (från user table)
+
         });
     }
 
@@ -28,6 +28,6 @@ class CreateMemberActivitiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('member_activities');
+        Schema::dropIfExists('team_user');
     }
 }
